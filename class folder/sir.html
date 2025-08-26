@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="form.css">
+
+    <!-- <script>
+        function hello(e) {
+
+            let a = document.getElementById("html");
+            a.style.visibility = 'hidden';
+        }
+
+    </script> -->
+    <!-- <style>
+        *{
+            background-color: black;
+        }
+        .top{
+            color: aliceblue;
+        }
+
+    </style> -->
+    <style>
+        body{ 
+          
+            background-size: cover;
+        }
+    </style>
+
+</head>
+
+<body>
+    <p id="hello">Fill the bellow form</p>
+
+    <form class="top">
+        <label for="fname">First name:</label>
+        <input type="text"  name="fname" value="" placeholder="Enter the name"><br>
+        <label for="lname">Last name:</label>
+        <input type="text"  name="lname" value="" placeholder="Enter  the last  name"><br><br>
+
+        <input type="radio" name="fav_language" value="HTML" style="visibility: inherit;">
+        <label for="html">HTML</label><br>
+        <input type="radio"  name="fav_language" value="CSS">
+        <label for="css">CSS</label><br>
+        <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+        <label for="javascript">JavaScript</label><br>
+
+
+        <label for="cars">Choose a car:</label>
+
+        <select name="cars" id="cars">
+            <option value="volvo">Volvo car</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+        </select><br>
+
+        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+        <label for="vehicle1"> I have a bike</label><br>
+        <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+        <label for="vehicle2"> I have a car</label><br>
+        <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+        <label for="vehicle3"> I have a boat</label><br>
+
+        <input type="submit" onsubmit="hello(event)" value="Submit">
+
+
+        <input type="button" value="add">
+    </form>
+</body>
+
+</html>
