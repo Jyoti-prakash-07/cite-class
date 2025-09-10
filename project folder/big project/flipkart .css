@@ -95,10 +95,8 @@
    position: absolute;
    top: 60%;
    left: 10px;
-
    transform: translateY(-50%);
    width: 16px;
-
    height: 16px;
    pointer-events: none;
  }
