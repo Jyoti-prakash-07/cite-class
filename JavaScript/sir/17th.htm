@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div id="first" style="width: 50%; height: 50vh; border: 2px solid black; text-align: center; padding-top: 80px; 
+background-color: lightblue; " mouseover="clicked()" mouseout="clickedout()">
+    Hello World </div>
+
+<button onclick="add()"> In</button>
+<button onclick="remove()"> out</button>
+
+<script>
+function add() {
+     alert("Event Listeners Added 😀");
+    let first = document.getElementById("first");
+    first.aadEventListener ("mouseover", clicked());
+    first.addEventListener ("onmouseout", clickedout());
+   
+}
+function remove() {
+        alert("Event Listeners Removed 👍");
+    let first = document.getElementById("first");
+    first.removeEventListener ("mouseover", clicked());
+    first.removeEventListener ("onmouseout", clickedout());
+}
+    function clicked() {
+        //alert("you clicked me");
+  let first = document.getElementById("first");
+    first.style.backgroundColor = "yellow";
+    }
+    function clickedout() {
+        let first = document.getElementById("first");
+        first.style.backgroundColor = "lightblue";
+    }
+</script>
+</body>
+</html>

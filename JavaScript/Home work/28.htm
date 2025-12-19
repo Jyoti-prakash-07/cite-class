@@ -1,0 +1,85 @@
+<!-- Creat webpage to display a digital clock with,hour,second,munites and am,pm -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigitalClock</title>
+    <style>
+        body {
+            background-color: #282c34;
+        }
+        .clock {
+            color: #7e1616;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 48px;
+            text-align: center;
+            margin-top: 20%;
+        }
+
+
+
+
+
+
+    </style>
+</head>
+
+<body>
+    <div class="clock">
+        <div>
+            <span id="time"> 00:00:00</span>
+            <span id="ampm">AM</span>
+        </div>
+    </div>
+    <script>
+        function pad(n) {  //function to add 0 before single digit
+            return n.toString().padStart(2, "0"); //eg: 9 to 09
+
+        }
+       
+
+        function updateClock() { //function to update clock every second
+            const now = new Date(); //get current date and time
+            let hours = now.getHours(); //get hours
+            let minutes = now.getMinutes(); //get minutes
+            let seconds = now.getSeconds(); //get seconds
+
+            const ampm = hours >= 12 ? "PM" : "AM"; //determine AM or PM
+            hours = hours % 12; //convert to 12-hour format
+            if (hours === 0) hours = 12; //handle midnight case
+
+            document.getElementById("time").textContent = `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`; //update time display
+            document.getElementById("ampm").textContent = ampm; //update AM/PM display
+        }
+
+        updateClock();//initial call to display clock immediately
+        setInterval(updateClock, 1000); //update every second
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+a=4;
+b=5;
+c=6;
+d=7;
+e=8;
+console.log(a+b);
+console.log(b+c);
+console.log(c+d);
+console.log(d+e);
+console.log(e+a);

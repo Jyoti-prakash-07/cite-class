@@ -1,0 +1,10 @@
+a=4;
+b="5";
+c=5;
+d="7";
+e=4;
+console.log(a<b||c>d);
+console.log(b>c||d<e);
+console.log(a<e||b>c);
+console.log(d>c||e<a);
+console.log(b<d||c>e);

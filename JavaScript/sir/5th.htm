@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculate Percentage</title>
+        <style>
+          body{
+            background-color: rgb(55, 162, 216);
+          }
+          form{
+            color: rgb(193, 34, 6);
+            background-color: rgb(48, 190, 178);
+           height: 175px;
+         width: 366px;
+         padding: 80px;
+         border-radius: 15px;
+         border: thick double rgb(6, 241, 14);
+         transition: all 0.3s ease;
+}
+          
+          .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+      
+          }
+          h2{
+            text-align: center;
+            color: rgb(0, 64, 255);
+            margin-top: -40px;
+          }
+          .pre{
+            display: flex;
+            color: rgb(109, 3, 215);
+            justify-content: end;
+            align-items: end;
+            margin-top: -14px;
+
+          }
+          button{
+            background-color: rgb(255, 0, 0);
+              color: rgb(255, 255, 255);
+              border-radius: 10px;
+               margin-top: 10px;
+              margin-left: 256px;
+          }
+          
+        </style>
+
+    </head>
+    <body>
+
+        <div class="container">
+
+            <form onsubmit="calculate(event)">
+                <h2>Calculate Percentage</h2>
+
+                <label for="math">Math:</label>
+                <input value type="number" name="math" id="math" required><br>
+                <label for="odia">Odia:</label>
+                <input value type="number" name="odia" id="odia"required><br>
+                <label for="english">English:</label>
+                <input value type="number" name="english" id="english"required><br>
+                <label for="history">History:</label>
+                <input value type="number" name="history" id="history"required><br>
+                <label for="geography">Geography:</label>
+                <input value type="number" name="geography" id="geography"required><br>
+                <button type="submit"> Submit</button>
+                <div id="per"></div>
+
+            </form>
+        </div>
+
+        <script>
+   function calculate( event) {
+        event.preventDefault();
+
+let math =parseInt(document.getElementById("math").value);
+let eng =parseInt(document.getElementById("english").value);
+let odia =parseInt(document.getElementById("odia").value);
+let history=parseInt(document.getElementById("history").value);
+let geo =parseInt(document.getElementById("geography").value);
+let total = math+odia+eng+history+geo;
+let per = total / 5 ;
+let result=""
+
+if (per >= 90 && per <= 100) {
+    result="A+";
+} else if (per >= 80 && per < 90) {
+  result="A";
+} else if (per >= 70 && per < 80) {
+    result="B+";
+} else if (per >= 60 && per < 70) {
+   result="B";
+} else if (per >= 50 && per < 60) {
+   result="C+";
+} else if (per >= 40 && per < 50) {
+   result="C";
+} else if (per >= 33 && per < 40) {
+result="D";
+} else {
+   result="Fail";
+
+    
+}
+let resultDiv = document.getElementById("per");
+resultDiv.innerHTML = `<p>Total Marks: ${total} </p>
+<p>Percentage: ${per.toFixed(2)}% </p>
+<p>Grade: ${result} </p>`;
+}
+
+</script>
+
+    </body>
+</html>

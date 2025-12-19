@@ -1,0 +1,133 @@
+<!-- Creat webpage to display a analog clock  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Perfect Analog Clock</title>
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #211d1d;
+    }
+
+    .clock {
+        width: 300px;
+        height: 300px;
+        border: 10px solid black;
+        border-radius: 50%;
+        background: white;
+        position: relative;
+    }
+
+    /* Numbers */
+    .number {
+        position: absolute;
+        font-size: 22px;
+        font-weight: bold;
+        left: 50%;
+        top: 50%;
+        transform-origin: center;
+    }
+
+    /* HANDS FIXED */
+    .hand {
+        position: absolute;
+        width: 6px;
+        background: black;
+        left: 50%;
+        bottom: 50%;        /* FIXED */
+        transform-origin: bottom; /* FIXED */
+        transform: translateX(-50%) rotate(0deg);
+    }
+
+    .hour {
+        height: 60px;
+    }
+
+    .minute {
+        height: 85px;
+    }
+
+    .second {
+        height: 100px;
+        width: 2px;
+        background: red;
+    }
+
+    /* Center dot */
+    .center {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 12px;
+        height: 12px;
+        background: black;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+    }
+</style>
+</head>
+<body>
+
+<div class="clock" id="clock"></div>
+
+<script>
+const clock = document.getElementById("clock");//get clock div
+
+/* Create numbers */
+for (let i = 1; i <= 12; i++) {//loop from 1 to 12
+    const num = document.createElement("div");//create div for number
+    num.className = "number";//set class
+    num.textContent = i;//set number text
+
+    const angle = (i * 30) - 90;//calculate angle for positioning
+    const radius = 120;//set radius from center
+
+    num.style.transform = `
+        translate(-50%, -50%)
+        rotate(${angle}deg)
+        translate(${radius}px)
+        rotate(${-angle}deg)
+    `;//set transform for positioning
+
+    clock.appendChild(num);//add number to clock
+}
+
+/* Create hands */
+const hourHand = document.createElement("div");//create hour hand
+hourHand.className = "hand hour";//set class
+
+const minHand = document.createElement("div");//create minute hand
+minHand.className = "hand minute";
+
+const secHand = document.createElement("div");//create second hand
+secHand.className = "hand second";//set class
+
+clock.appendChild(hourHand);//add hour hand to clock
+clock.appendChild(minHand);//add minute hand to clock
+clock.appendChild(secHand);//add second hand to clock
+
+clock.appendChild(document.createElement("div")).className = "center";//add center dot
+
+/* Update Clock */
+function updateClock() {//function to update clock hands
+    const now = new Date();//get current time
+    const h = now.getHours();//get hours
+    const m = now.getMinutes();//get minutes
+    const s = now.getSeconds();//get seconds
+
+    hourHand.style.transform = `translateX(-50%) rotate(${(h % 12) * 30 + m * 0.5}deg)`;//calculate hour hand angle
+    minHand.style.transform = `translateX(-50%) rotate(${m * 6}deg)`;//calculate minute hand angle
+    secHand.style.transform = `translateX(-50%) rotate(${s * 6}deg)`;//calculate second hand angle
+}
+
+setInterval(updateClock, 1000);//update every second
+updateClock();//initial call to set hands immediately
+</script>
+
+</body>
+</html>

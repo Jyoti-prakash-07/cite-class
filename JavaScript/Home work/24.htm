@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+       
+          .one {
+            text-align: center;
+             color: white;
+            font-size: 50px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div id="div" class="container">
+        <h2 id="display" class="one"></h2>
+    </div>
+    <script>
+        //function changeBgColor() { document.body.style.backgroundColor = "blue"; } 
+        //setTimeout(changeBgColor, 1500); 
+
+
+
+        const listItems = ["apple", "banana", "orange", "grape"];
+        const colors = ["red", "yellow", "orange", "purple"];
+
+        function showrendomFruit() {
+
+            const randomindex = Math.floor(Math.random() * listItems.length);//get random index
+            const f = listItems[randomindex];//get fruit at that index
+            document.getElementById("display").innerText = f //display fruit
+            document.body.style.backgroundColor = colors[randomindex];//change bg color
+
+        }
+        setInterval(showrendomFruit, 800);//call every 800 milliseconds
+      
+
+    </script>
+</body>
+
+</html>

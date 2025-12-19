@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgba(15, 14, 14, 0.799);
+        }
+        h2{
+            text-align: center;
+            color: white;   /* TEXT ALWAYS WHITE */
+            font-size: 40px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="div" class="container">
+    <h2 id="display"></h2>      
+</div>
+
+<script>  
+
+// fruits with background colors
+const fruits = [
+    { fruit:"apple",  color:"red" },
+    { fruit:"banana", color:"yellow" },
+    { fruit:"orange", color:"orange" },
+    { fruit:"grape",  color:"purple" }
+];
+
+// function to change fruit name + background color
+function showRandomFruit(){
+    const randomIndex = Math.floor(Math.random() * fruits.length);// random index
+    const f = fruits[randomIndex];// fruit at that index
+    
+    document.getElementById("display").innerText = f.fruit;// DISPLAY FRUIT NAME
+
+    // BACKGROUND COLOR CHANGE — TEXT WHITE
+    document.body.style.backgroundColor = f.color;
+}
+
+// change every 1 second
+setInterval(showRandomFruit, 800);//
+
+</script>
+
+</body>
+</html>

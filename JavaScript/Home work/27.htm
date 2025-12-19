@@ -1,0 +1,64 @@
+<!-- Creat a website which is capable of storing bookmark of your favorite website using hiperlink -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Bookmark Saver</title>
+</head>
+<body>
+    <h2>Simple Bookmark Saver</h2>
+
+    <input id="title" type="text" placeholder="Website Name">   
+
+    <input id="url" type="text" placeholder="Website URL (https://)">
+    <button onclick="addBookmark()">Add</button>
+
+    <h3>Your Bookmarks</h3>
+    <ul id="list"></ul>
+
+<script>
+    let bookmarks = [];//array to hold bookmarks
+
+    function load(){ //load bookmarks from localStorage
+        const data = localStorage.getItem("simple_bm"); //get data
+        bookmarks = data ? JSON.parse(data) : []; //parse or empty array
+        render(); //render bookmarks
+    }
+
+    function save(){ //save bookmarks to localStorage
+        localStorage.setItem("simple_bm", JSON.stringify(bookmarks));//convert to string and save
+    }
+
+    function render(){ //render bookmarks to the list
+        const list = document.getElementById("list");//list element
+        list.innerHTML = ""; //clear existing list
+        bookmarks.forEach((b, i) => { //for each bookmark
+            const li = document.createElement("li"); //create list item
+            li.innerHTML = `<a href="${b.url}" target="_blank">${b.title}</a> 
+                            <button onclick="del(${i})">Delete</button>`;  //link and delete button
+            list.appendChild(li); //add to list
+        });
+    }
+
+    function addBookmark(){ //add new bookmark
+        const t = document.getElementById("title").value.trim();//get title
+        const u = document.getElementById("url").value.trim();//get url
+        if(!t || !u){ alert("Enter both fields"); return; }//validate
+
+        bookmarks.push({title:t, url:u});//add to array
+        save();//save to localStorage
+        render();//render bookmarks
+        document.getElementById("title").value = "";//clear title input
+        document.getElementById("url").value = "";//clear url input
+    }
+
+    function del(i){ //delete bookmark at index i
+        bookmarks.splice(i,1); //remove from array
+        save();  //save to localStorage
+        render();//render bookmarks
+    }
+
+    load();
+</script>
+</body>
+</html>

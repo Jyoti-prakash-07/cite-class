@@ -1,0 +1,43 @@
+<!-- Creat a growing balb effect using classlist toggle method in js -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle</title>
+</head>
+<body>
+<div id="first" style="width: 30%; 
+height: 40vh; border-radius: 85%; border: 2px solid black; text-align: center; padding-top: 80px; 
+background-color: lightblue; " onmouseover="clicked()" onmouseout="clickedout()">
+    </div>
+
+<button onclick="on()"> ON</button>
+<button onclick="off()"> OFF</button>
+
+<script>
+function on() { 
+  let first = document.getElementById("first");//get the div
+    first.style.backgroundColor = "yellow";//change color to yellow
+    document.body.style.backgroundColor= "black";//change body color to black
+   
+}
+function off() {
+       
+   let first = document.getElementById("first");//get the div
+        first.style.backgroundColor = "lightblue";//change color to lightblue
+       document.body.style.backgroundColor= "white";//change body color to white
+}
+    function clicked() { //function when mouse over
+  let first = document.getElementById("first");//get the div
+    first.style.backgroundColor = "yellow";//change color to yellow
+    document.body.style.backgroundColor= "black";//change body color to black
+    }
+    function clickedout() {//function when mouse out
+        let first = document.getElementById("first");//get the div
+        first.style.backgroundColor = "lightblue";//change color to lightblue
+       document.body.style.backgroundColor= "white";//change body color to white
+    }
+</script>
+</body>
+</html>
