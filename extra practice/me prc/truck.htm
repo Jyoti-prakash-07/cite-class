@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Caranimation</title>
+        <style>
+            html, body {
+                  margin: 0;
+                  padding: 0;
+                  overflow: hidden;
+                  background-image:url(road.png);
+                  background-size:cover;
+                  background-repeat: no-repeat;
+
+                   height: 100%; 
+
+ }
+
+         
+            @keyframes truckmove {
+                0%{
+                    left: -200px;}
+                100%{
+                    left: 120%;
+                }
+            }
+            @keyframes wheelmove {
+                0%{
+                transform: rotate(0deg);}
+                100%{
+                transform: rotate(360deg);
+                }
+            }
+        .car{
+            position:absolute;
+            left: 0px;
+            bottom: -3px;
+            animation:truckmove 5s 0s infinite linear;
+        }
+    .car img.car {
+    width: 440px; 
+    height: auto;
+    display: block;
+}
+ .wheel-outer{
+ position: absolute;
+    bottom: 0px;
+    left: 48px;
+    width: 157px;
+    display: flex;
+    background: transparent;
+    gap: 156px;
+         
+        }
+        .wheel-outer img{
+            width: 60px;
+              height: 60px;
+              animation: wheelmove 0.60s 0s infinite linear;
+        }
+
+
+     @keyframes carmove {
+                0%{
+                    right: -200px;}
+                100%{
+                    right: 120%;
+                }
+            }
+              @keyframes wheelmove2 {
+                0%{
+                transform: rotate(0deg);}
+                100%{
+                transform: rotate(360deg);
+                }
+            }
+.car2{
+       position:absolute;
+            right: 0px;
+            bottom: -4px;
+            animation:carmove 5s 0s infinite linear;
+
+}
+.car2 img {
+    width: 372px; 
+    height: auto;
+    display: block;}
+
+.wheel-outer2 {
+       position: absolute;
+    bottom: 2px;
+    left: 38px;
+    width: 152px;
+    display: flex
+;
+    gap: 165px;
+}
+
+        .wheel-outer2 img{
+            width: 60px;
+              height: 60px;
+              animation: wheelmove2 0.60s 0s infinite linear;
+        }
+
+
+        
+
+
+    </style>
+
+    </head>
+    <body>
+
+        <div class="car">
+            <img src="car.png" alt>
+            <div class="wheel-outer">
+                <img src="wheel.png" alt>
+                <img src="wheel.png" alt>
+
+            </div>
+
+        </div>
+        <div class="car2">
+            <img src="car2.png" alt>
+            <div class="wheel-outer2">
+                <img src="wheel.png" alt>
+                <img src="wheel.png" alt>
+
+            </div>
+
+        </div>
+
+    </body>
+</html>
