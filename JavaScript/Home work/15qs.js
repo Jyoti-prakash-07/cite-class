@@ -2,8 +2,8 @@
 //ANS:-
 //while loop fctorial
 let n=6;
-let fact=1;
-let i=1;
+let fact=1;//factorial variable alwasys start with 1
+let i=1; //counter variable
 while(i<=n){
     fact=fact*i;
     i++;

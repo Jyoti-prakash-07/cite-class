@@ -11,3 +11,5 @@ if (a > b) {
 else {
     console.log("Greatest is b:", b);
 }
+
+console.log("Greatest is:", (a > b) ? a : b);

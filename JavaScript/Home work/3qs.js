@@ -9,6 +9,7 @@ console.log(student);
 
 student.name = "jyoti";
 student.age = 20;
+student.isPresent=true;
 console.log(student);
 
 

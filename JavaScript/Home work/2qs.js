@@ -9,3 +9,5 @@ let student={
 console.log(typeof(student.name));
 console.log(typeof(student.age));
 console.log(typeof(student.isPresent));
+console.log(typeof(student));
+

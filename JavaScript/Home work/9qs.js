@@ -12,22 +12,22 @@ else{
     console.log(a,"This number is odd.");
 }
 if(b%2==0){
-    console.log(b+"This number is even.");
+    console.log(b,"This number is even.");
 }
 else{
-    console.log(b+"This number is odd.");
+    console.log(b,"This number is odd.");
 }
 if(c%2===0){
-    console.log("This number is even.");
+    console.log(c,"This number is even.");
 }
 else{
-    console.log("This number is odd.");
+    console.log(c,"This number is odd.");
 }
 if(d%2===0){
-    console.log("This number is even.");
+    console.log(d,"This number is even.");
 }
 else{
-    console.log("This number is odd.");
+    console.log(d,"This number is odd.");
 }
 
 

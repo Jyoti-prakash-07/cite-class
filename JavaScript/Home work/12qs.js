@@ -12,3 +12,5 @@ if (b > a && b > c) {
 if (c > b && c > a) {
     console.log("Greatest is c:", c);
 }
+console.log("Greatest is:", (a > b) ? (a > c ? a : c) : (b > c ? b : c));
+

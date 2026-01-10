@@ -5,12 +5,14 @@
     c=50;
     d=-1;
     e="-2";
+    f=0;
  
 
-console.log("a:-", (a>0) ? "+ve" : "-ve");
-console.log("b:-", (b>0) ? "+ve" : "-ve");
-console.log("c:-", (c>0) ? "+ve" : "-ve");
-console.log("d:-", (d>0) ? "+ve" : "-ve");
+console.log("a:-", (a>=0) ? "+ve" : "-ve");
+console.log("b:-", (b>=0) ? "+ve" : "-ve");
+console.log("c:-", (c>=0) ? "+ve" : "-ve");
+console.log("d:-", (d>=0) ? "+ve" : "-ve");
+console.log("f:-", (f>=0) ? "+ve" : "-ve");
 
 // if(a>0){
 //     console.log("+ve")

@@ -1,4 +1,4 @@
-// Write a java script prgram to create a object of your biodata ?
+// Write a java script program to create a object of your biodata ?
 // Ans:-
 
 let biodata = {
