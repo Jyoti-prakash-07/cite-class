@@ -3,10 +3,10 @@
 //while loop palindrome
 let n=121;
 let rev=0;
-org=n;
+org=n;//original number
 while(n>0){
-    let rem=n%10;
-    rev=(rev*10)+rem;
+    let rem=n%10;//remainder
+    rev=(rev*10)+rem;//reverse number
     n=Math.floor(n/10);
 }
 if(org===rev){

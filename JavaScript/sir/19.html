@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Add Remove</title>
+
+    <style>
+        .clr{
+            background-color: yellow;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="one" class="clr">
+    <button id="sub" type="button">Submit</button>
+    <button type="button" onclick="handleClickAdd()">Add</button>
+    <button type="button" onclick="handleClickRemove()">Remove</button>
+</div>
+
+<script>
+function handleClick(){
+    let bg = document.getElementById("one");
+
+    if(bg.style.backgroundColor === "red"){
+        bg.style.backgroundColor = "yellow";
+    }else{
+        bg.style.backgroundColor = "red";
+    }
+}
+
+function handleClickAdd(){
+    let button = document.getElementById("sub");
+    button.addEventListener("click", handleClick);
+}
+
+function handleClickRemove(){
+    let button = document.getElementById("sub");
+    let bg = document.getElementById("one");
+
+    button.removeEventListener("click", handleClick);
+    bg.style.backgroundColor = "yellow"; 
+}
+
+</script>
+
+</body>
+</html>

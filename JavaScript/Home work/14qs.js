@@ -23,7 +23,7 @@ if (per >= 90 && per <= 100) {
     console.log("C+");
 } else if (per >= 40 && per < 50) {
     console.log("C");
-} else if (per >= 33 && per < 40) {
+} else if (per >= 30 && per < 40) {
     console.log("D");
 }else{
     console.log("Fail");
