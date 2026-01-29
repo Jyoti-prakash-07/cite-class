@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Class Example</title>
+</head>
+<body>
+
+<h3>Student Details</h3>
+<p id="demo"></p>
+
+<script>
+    class Student {
+        constructor(firstname, lastname, age, classname) {
+            this.firstname = firstname;
+            this.lastname = lastname;
+            this.age = age;
+            this.classname = classname;
+        }
+
+        printName() {
+            console.log("Name:", this.firstname + " " + this.lastname);
+        }
+
+        printDetails() {
+            console.log("First Name:", this.firstname);
+            console.log("Last Name:", this.lastname);
+            console.log("Age:", this.age);
+            console.log("Class:", this.classname);
+        }
+    }
+
+    // Object creation
+    let soumya = new Student("Soumya", "Patra", 22, 10);
+
+    // Method calls
+    soumya.printName();
+    soumya.printDetails();
+
+    // Show output in browser
+    document.getElementById("demo").innerHTML =
+        "Student Name: " + soumya.firstname + " " + soumya.lastname +
+        "<br>Age: " + soumya.age +
+        "<br>Class: " + soumya.classname;
+</script>
+
+</body>
+</html>

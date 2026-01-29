@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Prototype Example</title>
+</head>
+<body>
+
+<h3>Person Details</h3>
+<p id="demo"></p>
+
+<script>
+    // Constructor Function
+    function Person(first, last, age, eye) {
+        this.firstName = first;
+        this.lastName = last;
+        this.age = age;
+        this.eyeColor = eye;
+    }
+
+    // Prototype Property
+    Person.prototype.nationality = "English";
+
+    // Prototype Method
+    Person.prototype.printDetails = function () {
+        console.log("First Name:", this.firstName);
+        console.log("Last Name:", this.lastName);
+        console.log("Age:", this.age);
+        console.log("Eye Color:", this.eyeColor);
+        console.log("Nationality:", this.nationality);
+    };
+
+    // Object Creation
+    const myFather = new Person("John", "Doe", 50, "blue");
+
+    // Print in browser
+    document.getElementById("demo").innerHTML =
+        "The nationality of my father is <b>" + myFather.nationality + "</b>";
+
+    // Print in console
+    myFather.printDetails();
+    console.log("myFather object:", myFather);
+</script>
+
+</body>
+</html>
