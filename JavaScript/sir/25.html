@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <div class="1">  </div>
+
+
+
+<script>
+
+
+class Animal {
+  constructor() {
+    this._name = name;   // private-style variable
+  }
+
+  get name() {
+    return this._name;
+  }
+
+  set name(newName) {
+    this._name = newName;
+  }
+}
+
+let dog = new Animal("toffy");
+console.log(dog.name);
+dog.name = "Harry";
+console.log(dog.name);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+    
+</body>
+</html>

@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Class Example</title>
 </head>
 <body>
@@ -11,12 +10,14 @@
 <p id="demo"></p>
 
 <script>
+    // Parent class
     class Student {
-        constructor(firstname, lastname, age, classname) {
+        constructor(firstname, lastname, age, classname, labRoom) {
             this.firstname = firstname;
             this.lastname = lastname;
             this.age = age;
             this.classname = classname;
+            this.labRoom = labRoom;
         }
 
         printName() {
@@ -31,21 +32,41 @@
         }
     }
 
+    // Child class
+    class LabStudent extends Student {
+        constructor(firstname, lastname, age, classname, labRoom, cNumber) {
+            super(firstname, lastname, age, classname, labRoom);
+            this.cNumber = cNumber;
+        }
+
+        printAll() {
+            super.printDetails();
+            console.log("Age:", this.age);
+            console.log("Lab Room:", this.labRoom);
+            console.log("C Number:", this.cNumber);
+        }
+         static a() {
+            alert("Hello World");
+        }
+    }
+
     // Object creation
-    let soumya = new Student("Soumya", "Patra", 22, 10);
+    let soumya = new LabStudent("Soumya", "Patra", 22, 10, "A1", 101);
 
     // Method calls
     soumya.printName();
-    soumya.printDetails();
+   // soumya.printDetails();
+    soumya.printAll();
+    //soumya.a();
+    LabStudent.a();
 
     // Show output in browser
     document.getElementById("demo").innerHTML =
         "Student Name: " + soumya.firstname + " " + soumya.lastname +
         "<br>Age: " + soumya.age +
-        "<br>Class: " + soumya.classname;
-
-
-    
+        "<br>Class: " + soumya.classname +
+        "<br>Lab Room: " + soumya.labRoom +
+        "<br>C Number: " + soumya.cNumber;
 </script>
 
 </body>
